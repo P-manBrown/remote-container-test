@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  front:
+    build:
+      context: .
+      dockerfile: ./.devcontainer/Dockerfile-vscode
+    volumes:
+      - sources:/myapp-frontend
+      - bashhistory:/commandhistory
+      - vscode-extensions:/home/node/.vscode-server/extensions
+    command: /bin/sh -c "while sleep 1000; do :; done"
+volumes:
+  sources:
+  bashhistory:
+  vscode-extensions:
+
